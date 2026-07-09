@@ -1,0 +1,592 @@
+:root {
+  --primary-orange: #fd6e0a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background: #fff;
+  width: 100%;
+  overflow-x: hidden; /* Mencegah halaman bisa digeser ke kanan-kiri di HP */
+}
+
+/* ========================= */
+/* BUTTON ORANGE */
+/* ========================= */
+
+.btn-orange {
+  background-color: var(--primary-orange);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-orange:hover {
+  background-color: var(--primary-orange);
+  color: darkgrey;
+  transform: translateY(-2px);
+}
+
+/* ========================= */
+/* TEXT ORANGE */
+/* ========================= */
+
+.text-orange {
+  color: var(--primary-orange);
+}
+
+/* ========================= */
+/* NAVBAR */
+/* ========================= */
+
+.navbar-nav .nav-link {
+  position: relative;
+  color: #212529;
+  font-weight: 500;
+  margin: 0 8px;
+  transition: color 0.3s ease;
+}
+
+/* Hover */
+.navbar-nav .nav-link:hover {
+  color: var(--primary-orange);
+}
+
+/* Menu aktif */
+.navbar-nav .nav-link.active {
+  color: var(--primary-orange);
+}
+
+/* Garis bawah */
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: var(--primary-orange);
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+/* Garis muncul saat hover */
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Garis tetap muncul pada menu aktif */
+.navbar-nav .nav-link.active::after {
+  width: 100%;
+}
+
+/* ========================= */
+/* HERO */
+/* ========================= */
+.hero {
+  border-bottom: 1px solid #e9ecef;
+}
+
+/* ========================= */
+/* HERO TITLE */
+/* ========================= */
+
+.hero-title h1 {
+  line-height: 0.95;
+}
+
+.second-title {
+  margin-left: 100px;
+  margin-top: 8px;
+}
+
+/* ========================= */
+/* SOCIAL ICON */
+/* ========================= */
+.social-icons a {
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(--primary-orange) !important;
+  transform: translateY(-3px);
+}
+
+/* ========================= */
+/* ABOUT ME */
+/* ========================= */
+.about {
+  background: #fff;
+  padding: 55px 0 90px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.about-container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.about h2 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.about-desc {
+  text-align: center;
+  color: #6c757d;
+  max-width: 600px;
+  margin: 0 auto 45px;
+  font-size: 15px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 30px;
+}
+
+.about-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.about-item i {
+  font-size: 30px;
+  color: var(--primary-orange);
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.about-item h3 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.about-item p {
+  margin: 8px 0 0;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ========================= */
+/* PORTFOLIO */
+/* ========================= */
+
+.portfolio {
+  padding: 55px 0 90px;
+  background: #fff;
+}
+
+.portfolio .container {
+  max-width: 1440px;
+}
+
+.portfolio h2 {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.portfolio-desc {
+  max-width: 620px;
+  margin: 0 auto 50px;
+  text-align: center;
+  color: #666;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+/* ========================= */
+/* PORTFOLIO FILTER */
+/* ========================= */
+
+.portfolio-filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 55px;
+}
+
+.portfolio-filter button {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 10px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+  color: #333;
+}
+
+.portfolio-filter button:hover,
+.portfolio-filter .active {
+  background: var(--primary-orange);
+  color: #fff;
+  border-color: var(--primary-orange);
+}
+
+/* ========================= */
+/* PORTFOLIO GRID */
+/* ========================= */
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* ========================= */
+/* PORTFOLIO CARD */
+/* ========================= */
+
+.portfolio-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
+}
+
+.custom-modal {
+  max-width: 700px;
+}
+
+/* ========================= */
+/* PORTFOLIO MODAL */
+/* ========================= */
+.modal-content {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.modal-body img {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ========================= */
+/* CONTACT MODAL */
+/* ========================= */
+
+.custom-modal {
+  max-width: 620px;
+}
+
+#contactModal .modal-content {
+  border: none;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+#contactModal .modal-body {
+  padding: 40px;
+}
+
+/* FOTO PROFIL */
+.profile-photo{
+    width:150px;
+    height:150px;
+    margin:0 auto 20px;
+    border-radius:50%;
+    overflow:hidden;
+    border:5px solid #fff;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.profile-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+#contactModal p {
+  margin-bottom: 14px;
+  color: #555;
+}
+
+#contactModal .btn {
+  padding: 12px;
+  font-weight: 600;
+}
+/* ========================= */
+/* PORTFOLIO IMAGE */
+/* ========================= */
+
+.portfolio-card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  display: block;
+  transition: 0.45s;
+}
+
+.portfolio-card:hover .portfolio-image img {
+  transform: scale(1.08);
+}
+
+/* ========================= */
+/* PORTFOLIO CONTENT */
+/* ========================= */
+
+.portfolio-content {
+  padding: 28px;
+}
+
+.portfolio-category {
+  display: inline-block;
+  color: var(--primary-orange);
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.portfolio-content h4 {
+  font-size: 22px;
+  line-height: 1.35;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: #222;
+}
+
+.portfolio-content p {
+  color: #666;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ========================= */
+/* PORTFOLIO MEDIA TABLET */
+/* ========================= */
+
+@media (max-width: 991px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ========================= */
+/* PORTFOLIO MEDIA MOBILE */
+/* ========================= */
+
+@media (max-width: 576px) {
+  .portfolio {
+    padding: 60px 0;
+  }
+
+  .portfolio h2 {
+    font-size: 34px;
+  }
+
+  .portfolio-desc {
+    font-size: 14px;
+    margin-bottom: 35px;
+  }
+
+  .portfolio-filter {
+    gap: 8px;
+  }
+
+  .portfolio-filter button {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-image img {
+    height: 220;
+  }
+
+  .portfolio-card img {
+    height: 190px;
+  }
+
+  .portfolio-content {
+    padding: 20px;
+  }
+
+  .portfolio-content h4 {
+    font-size: 20px;
+  }
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+footer {
+  background: #0088ff; /* Warna biru cerah yang sama dengan navbar kamu */
+  padding: 12px 4%;
+  text-align: center; /* Membuat teks otomatis rata tengah */
+
+  /*Memberikan lengkungan halus hanya di sudut atas */
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+
+  /* memberi jarak tipis dengan section portfolio di atasnya agar tidak terlalu mepet */
+  margin-top: 0;
+}
+
+footer p {
+  color: white; /* Warna teks putih bersih */
+  font-size: 13px;
+}
+
+/* ========================= */
+/* TABLET */
+/* ========================= */
+
+@media (max-width: 991px) and (min-width: 577px) {
+  .about-container {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .about-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 50px;
+    justify-content: center;
+  }
+
+  .about-item {
+    align-items: flex-start;
+  }
+}
+
+/* ======================================================= */
+/* MEDIA QUERIES (Kunci utama agar RESPONSIF) */
+/* ======================================================= */
+
+/* Kode di bawah ini otomatis berjalan saat layar berukuran di bawah 768px (Tablet) */
+@media (max-width: 768px) {
+  /* HERO TITLE */
+  .second-title {
+    margin-left: 70px;
+  }
+  /* ========================= */
+  /* ABOUT ME - TABLET */
+  /* ========================= */
+
+  .about {
+    padding: 50px 0;
+  }
+
+  .about h2 {
+    font-size: 2.5rem;
+  }
+
+  .about-desc {
+    margin-bottom: 30px;
+  }
+
+  .about-container {
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .about-grid {
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    justify-content: center;
+    row-gap: 20px;
+    column-gap: 25px;
+  }
+
+  .about-item i {
+    font-size: 28px;
+  }
+
+  .about-item h3 {
+    font-size: 26px;
+  }
+
+  .about-item p {
+    font-size: 13px;
+  }
+}
+
+/* ========================= */
+/* MEDIA QUERY MOBILE */
+/* ========================= */
+
+@media (max-width: 576px) {
+  .hero-title {
+    text-align: left;
+  }
+
+  .hero-title h1 {
+    font-size: 3rem;
+  }
+
+  .second-title {
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  /* ========================= */
+  /* ABOUT ME - MOBILE */
+  /* ========================= */
+
+  .about {
+    padding: 40px 0;
+  }
+
+  .about h2 {
+    font-size: 2rem;
+  }
+
+  .about-desc {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  .about-container {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    row-gap: 25px;
+  }
+
+  .about-item {
+    gap: 14px;
+  }
+
+  .about-item i {
+    font-size: 26px;
+  }
+
+  .about-item h3 {
+    font-size: 24px;
+  }
+
+  .about-item p {
+    font-size: 13px;
+  }
+}

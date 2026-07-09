@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profil Biodata - Full & Responsive</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        background: white;
+        width: 100%;
+        overflow-x: hidden; /* Mencegah halaman bisa digeser ke kanan-kiri di HP */
+      }
+
+      /* PERBAIKAN 1: Container dibuat memenuhi layar (Full Width) */
+      .container {
+        width: 100%;
+        background: white;
+      }
+
+      /* SECTION 1 - NAVBAR */
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 4%; /* Menggunakan % agar jarak kanan-kiri fleksibel */
+        border-bottom: 1px solid #000;
+        background: white;
+      }
+
+      nav .logo {
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 20px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: black;
+        font-size: 14px;
+      }
+
+      /* SECTION 2 - HERO (HEADER) */
+      .hero {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 50px 4%;
+        border-bottom: 1px solid #000;
+        gap: 40px;
+      }
+
+      .hero-text {
+        flex: 1; /* Mengambil ruang proporsional */
+      }
+
+      .hero-text h2 {
+        margin-bottom: 15px;
+        font-size: 28px;
+      }
+
+      .hero-text p {
+        margin-bottom: 20px;
+        color: #555;
+        line-height: 1.6;
+      }
+
+      .hero-image {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .hero-image img {
+        width: 100%;
+        max-width: 600px; /* Batas maksimal ukuran sesuai wireframe */
+        height: auto;
+        border: 1px solid #aaa;
+        background-color: #e0e0e0;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 8px 16px;
+        border: 1px solid #000;
+        color: black;
+        text-decoration: none;
+        background: white;
+        font-size: 13px;
+      }
+
+      /* SECTION 3 - ABOUT ME / BIODATA */
+      .biodata {
+        background: white;
+        padding: 50px 4%;
+        text-align: center;
+        border-bottom: 1px solid #000;
+      }
+
+      .biodata h2 {
+        font-size: 24px;
+        margin-bottom: 5px;
+      }
+
+      .biodata p {
+        color: #666;
+        margin-bottom: 30px;
+        font-size: 14px;
+      }
+
+      .biodata-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 Kolom di layar besar */
+        gap: 20px;
+        width: 100%;
+      }
+
+      .biodata-box {
+        border: 1px solid #bbb;
+        padding: 18px;
+        background-color: #e0e0e0;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      /* SECTION 4 - PORTFOLIO */
+      .portfolio {
+        background: white;
+        padding: 50px 4%;
+        text-align: center;
+      }
+
+      .portfolio h2 {
+        font-size: 24px;
+        margin-bottom: 30px;
+      }
+
+      .portfolio-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .card {
+        border: 1px solid #aaa;
+        width: 33.33%; /* Tiga kolom sama rata di layar besar */
+        padding: 15px;
+        background: #fafafa;
+      }
+
+      .card img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 350 / 200;
+        object-fit: cover;
+        border: 1px solid #ccc;
+        background-color: #e0e0e0;
+      }
+
+      .card h4 {
+        margin-top: 15px;
+        font-size: 15px;
+      }
+
+      .card p {
+        font-size: 13px;
+        color: #666;
+        margin-top: 5px;
+      }
+
+      /* ======================================================= */
+      /* PERBAIKAN 2: MEDIA QUERIES (Kunci utama agar RESPONSIF) */
+      /* ======================================================= */
+
+      /* Kode di bawah ini otomatis berjalan saat layar berukuran di bawah 768px (Tablet & HP) */
+      @media (max-width: 768px) {
+        /* Hero section berubah jadi menumpuk ke bawah */
+        .hero {
+          flex-direction: column-reverse; /* Gambar di atas, teks di bawah */
+          text-align: center;
+          gap: 20px;
+        }
+
+        .hero-text,
+        .hero-image {
+          width: 100%;
+        }
+
+        .hero-image {
+          justify-content: center;
+        }
+
+        /* Grid biodata berubah dari 3 kolom menjadi 1 kolom saja */
+        .biodata-grid {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+
+        /* Kontainer portofolio berubah jadi ke bawah */
+        .portfolio-container {
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        /* Lebar kartu proyek otomatis penuh menyesuaikan layar HP */
+        .card {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <div class="logo">Brand</div>
+        <ul>
+          <li><a href="#">Header</a></li>
+          <li><a href="#">Biodata</a></li>
+          <li><a href="#">Portfolio</a></li>
+        </ul>
+      </nav>
+
+      <section class="hero">
+        <div class="hero-text">
+          <h2>Selamat Datang di Website Saya</h2>
+          <p>
+            Ini adalah contoh header dengan dua kolom. Kolom kiri berisi teks
+            seperti ini.
+          </p>
+          <a href="#" class="btn">Pelajari lebih lanjut</a>
+        </div>
+        <div class="hero-image">
+          <img
+            src="https://placehold.co/600x400?text=600+×+400"
+            alt="Header Image"
+          />
+        </div>
+      </section>
+
+      <section class="biodata">
+        <h2>About Me</h2>
+        <p>A brief introduction about myself</p>
+        <div class="biodata-grid">
+          <div class="biodata-box">Angga Hermawan</div>
+          <div class="biodata-box">Sarjana Komputer</div>
+          <div class="biodata-box">Junior Full Stack Web Developer</div>
+          <div class="biodata-box">+62 838-6167-9625</div>
+          <div class="biodata-box">Sepak Bola, Futsal, Bulu Tangkis</div>
+          <div class="biodata-box">Kab. Tangerang</div>
+        </div>
+      </section>
+
+      <section class="portfolio">
+        <h2>Portofolio</h2>
+        <div class="portfolio-container">
+          <div class="card">
+            <img
+              src="https://placehold.co/350x200?text=350+×+200"
+              alt="Proyek 1"
+            />
+            <h4>Proyek 1</h4>
+            <p>Deskripsi proyek 1.</p>
+          </div>
+          <div class="card">
+            <img
+              src="https://placehold.co/350x200?text=350+×+200"
+              alt="Proyek 2"
+            />
+            <h4>Proyek 2</h4>
+            <p>Deskripsi proyek 2.</p>
+          </div>
+          <div class="card">
+            <img
+              src="https://placehold.co/350x200?text=350+×+200"
+              alt="Proyek 3"
+            />
+            <h4>Proyek 3</h4>
+            <p>Deskripsi proyek 3.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

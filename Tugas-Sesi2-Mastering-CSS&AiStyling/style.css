@@ -1,0 +1,345 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: white;
+  width: 100%;
+  overflow-x: hidden; /* Mencegah halaman bisa digeser ke kanan-kiri di HP */
+}
+
+/* PERBAIKAN 1: Container dibuat memenuhi layar (Full Width) */
+.container {
+  width: 100%;
+  background: white;
+}
+
+/* ========================================== */
+/* SETUP NAVBAR UTAMA (Tampilan Desktop)     */
+/* ========================================== */
+/* SECTION 1 - NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 4%; /* Menggunakan % agar jarak kanan-kiri fleksibel */
+  border-bottom: 1px solid #bbb;
+  background: #0088ff;
+  color: white;
+  position: relative; /*fungsi agar menu dropdown mobile tepat berada di bawah nav*/
+}
+
+nav .logo {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+}
+/* Sembunyikan checkbox dan tombol burger di komputer/desktop */
+.menu-checkbox,
+.hamburger-btn {
+  display: none;
+}
+/* SECTION 2 - TOMBOL LINK (Mengubah tag <a> menjadi tombol biru dengan hover) */
+.btn {
+  display: inline-block; /* Wajib untuk tag <a> agar padding & margin bekerja dengan baik */
+  padding: 10px 20px;
+  background: #0088ff; /* Warna latar tombol biru cerah */
+  color: white; /* Warna teks di dalam tombol jadi putih */
+  border: none;
+  outline: none;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 4px; /* Membuat sudut tombol sedikit melengkung */
+  cursor: pointer;
+  transition: background 0.3s ease; /* Membuat efek transisi hover menjadi halus */
+}
+
+/* Efek ketika kursor mouse berada di atas tombol link */
+.btn:hover {
+  background: #0055cc; /* Warna biru berubah menjadi sedikit gelap saat di-hover */
+}
+
+/* SECTION 3 - HERO (HEADER) */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 8%;
+  background: white;
+  gap: 60px;
+  border-bottom: 1px solid #bbb; /* Tambahkan garis pembatas abu-abu tipis di bawah hero*/
+}
+
+.hero-text {
+  max-width: 500px;
+}
+
+.hero-text h2 {
+  margin-bottom: 15px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.hero-text p {
+  margin-bottom: 20px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; /* Memastikan gambar mepet ke kanan pada desktop */
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 450px; /* Membatasi lebar maksimal gambar agar tidak terlalu besar */
+  height: auto;
+  background: #555;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* SECTION 4 - ABOUT ME / BIODATA */
+.biodata {
+  background: white;
+  padding: 50px 4%;
+  text-align: center;
+  border-bottom: 1px solid #bbb;
+}
+
+.biodata h2 {
+  color: #0088ff;
+  font-size: 26px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.biodata p {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+.biodata-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 Kolom di layar besar */
+  gap: 20px;
+  width: 100%;
+}
+
+.biodata-box {
+  background-color: #e0e0e0;
+  border: 1px solid #bbb;
+  padding: 15px 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  text-align: left;
+}
+
+/* Mewarnai teks label di depan (Nama Lengkap, Pendidikan, dll) menjadi Biru */
+.biodata-box .label {
+  color: #0066cc;
+  font-weight: bold;
+  margin-right: 5px; /* Memberikan sedikit jarak setelah tanda titik dua */
+}
+
+/* SECTION 4 - PORTFOLIO */
+.portfolio {
+  background: white;
+  padding: 50px 4%;
+  text-align: center;
+}
+
+.portfolio h2 {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.portfolio-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.card {
+  border: 1px solid #e0e0e0;
+  width: 33.33%; /* Tiga kolom sama rata di layar besar */
+  padding: 15px;
+  background: #ffffff;
+  border-radius: 8px;       /* Membuat sudut kotak melengkung modern */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Efek bayangan halus */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi animasi lancar */
+  cursor: pointer;
+}
+
+/* Efek saat kartu disorot mouse (mengambang naik sedikit) */
+.card:hover {
+  transform: translateY(-5px); /* Kartu naik sedikit ke atas */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Bayangannya jadi sedikit lebih tebal */
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 350 / 200;
+  object-fit: cover;
+  border: none;
+  border-radius: 6px;
+  background-color: transparent;
+}
+
+.card h4 {
+  margin-top: 15px;
+  font-size: 15px;
+}
+
+.card p {
+  font-size: 13px;
+  color: #666;
+  margin-top: 5px;
+}
+
+/* SECTION 5 - FOOTER */
+footer {
+  background: #0088ff;  /* Warna biru cerah yang sama dengan navbar kamu */
+  padding: 12px 4%;
+  text-align: center;   /* Membuat teks otomatis rata tengah */
+
+   /*Memberikan lengkungan halus hanya di sudut atas */
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+
+  /* memberi jarak tipis dengan section portfolio di atasnya agar tidak terlalu mepet */
+  margin-top: 0px;
+}
+
+footer p {
+  color: white;         /* Warna teks putih bersih */
+  font-size: 13px;
+}
+
+/* ======================================================= */
+/* MEDIA QUERIES (Kunci utama agar RESPONSIF) */
+/* ======================================================= */
+
+/* Kode di bawah ini otomatis berjalan saat layar berukuran di bawah 768px (Tablet & HP) */
+@media (max-width: 768px) {
+  /* Hero section berubah jadi menumpuk ke bawah */
+ /* Tampilkan tombol hamburger (Garis Tiga) */
+  .hamburger-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 22px;
+    height: 16px;
+    cursor: pointer;
+  }
+
+  /* Desain fisik garis tiga putih */
+  .hamburger-btn span {
+    display: block;
+    height: 2.5px;
+    width: 100%;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* Mengubah menu biasa menjadi menu dropdown bertumpuk vertikal */
+  nav ul {
+    display: none; /* Sembunyikan menu secara default */
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Menempel tepat di bawah baris navbar */
+    left: 0;
+    width: 100%;
+    background: #0055cc; /* Warna biru sedikit lebih gelap untuk dropdown */
+    padding: 15px 0;
+    gap: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 99;
+  }
+
+  nav ul li {
+    width: 100%;
+  }
+
+  /* TRIK UTAMA: Ketika checkbox diklik/dicentang, tampilkan menu ul */
+  .menu-checkbox:checked ~ ul {
+    display: flex;
+  }
+
+  /* ANIMASI: Mengubah hamburger jadi huruf (X) saat menu terbuka */
+  .menu-checkbox:checked ~ .hamburger-btn span:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+  }
+  .menu-checkbox:checked ~ .hamburger-btn span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-checkbox:checked ~ .hamburger-btn span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .hero {
+    flex-direction: column-reverse; /* Gambar di atas, teks di bawah */
+    text-align: center;
+    padding: 40px 5%;
+    gap: 35px;
+  }
+
+  .hero-text {
+    width: 100%;
+    max-width: 100%; /* Menghapus batasan 500px agar teks fleksibel di layar kecil */
+  }
+
+  .hero-text h2 {
+    font-size: 24px; /* Ukuran font judul disesuaikan agar tidak kebesaran di tablet/HP */
+  }
+
+  .hero-image {
+    flex: none; /* MEMATIKAN flex: 1 agar gambar tidak mengecil/menciut paksa */
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-image img {
+    width: 80%; /* Gambar akan melebar proporsional memenuhi 80% lebar layar tablet/HP */
+    max-width: 380px; /* Batas aman ukuran gambar di layar kecil */
+  }
+
+  /* Grid biodata berubah dari 3 kolom menjadi 1 kolom saja */
+  .biodata-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* Kontainer portofolio berubah jadi ke bawah */
+  .portfolio-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Lebar kartu proyek otomatis penuh menyesuaikan layar HP */
+  .card {
+    width: 100%;
+  }
+}
