@@ -169,8 +169,10 @@ nav ul li a {
 }
 
 .portfolio h2 {
-  font-size: 24px;
+  color: #0088ff;
+  font-size: 26px;
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .portfolio-container {
@@ -184,9 +186,11 @@ nav ul li a {
   width: 33.33%; /* Tiga kolom sama rata di layar besar */
   padding: 15px;
   background: #ffffff;
-  border-radius: 8px;       /* Membuat sudut kotak melengkung modern */
+  border-radius: 8px; /* Membuat sudut kotak melengkung modern */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Efek bayangan halus */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi animasi lancar */
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease; /* Transisi animasi lancar */
   cursor: pointer;
 }
 
@@ -219,11 +223,11 @@ nav ul li a {
 
 /* SECTION 5 - FOOTER */
 footer {
-  background: #0088ff;  /* Warna biru cerah yang sama dengan navbar kamu */
+  background: #0088ff; /* Warna biru cerah yang sama dengan navbar kamu */
   padding: 12px 4%;
-  text-align: center;   /* Membuat teks otomatis rata tengah */
+  text-align: center; /* Membuat teks otomatis rata tengah */
 
-   /*Memberikan lengkungan halus hanya di sudut atas */
+  /*Memberikan lengkungan halus hanya di sudut atas */
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
 
@@ -232,7 +236,7 @@ footer {
 }
 
 footer p {
-  color: white;         /* Warna teks putih bersih */
+  color: white; /* Warna teks putih bersih */
   font-size: 13px;
 }
 
@@ -243,7 +247,7 @@ footer p {
 /* Kode di bawah ini otomatis berjalan saat layar berukuran di bawah 768px (Tablet & HP) */
 @media (max-width: 768px) {
   /* Hero section berubah jadi menumpuk ke bawah */
- /* Tampilkan tombol hamburger (Garis Tiga) */
+  /* Tampilkan tombol hamburger (Garis Tiga) */
   .hamburger-btn {
     display: flex;
     flex-direction: column;
@@ -275,7 +279,7 @@ footer p {
     padding: 15px 0;
     gap: 15px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 99;
   }
 
