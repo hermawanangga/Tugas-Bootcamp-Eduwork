@@ -7,7 +7,6 @@ const portfolioCards = document.querySelectorAll(".portfolio-card");
 // Event ketika tombol filter diklik
 filterButtons.forEach((button) => {
   button.addEventListener("click", () => {
-
     // Menghapus class active dari semua tombol
     filterButtons.forEach((btn) => btn.classList.remove("active"));
 
@@ -19,7 +18,6 @@ filterButtons.forEach((button) => {
 
     // Melakukan filter card
     portfolioCards.forEach((card) => {
-
       const category = card.dataset.category;
 
       if (filter === "all" || filter === category) {
@@ -27,8 +25,6 @@ filterButtons.forEach((button) => {
       } else {
         card.style.display = "none";
       }
-
     });
-
   });
 });
