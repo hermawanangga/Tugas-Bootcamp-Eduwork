@@ -1,0 +1,15 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+.navbar-custom {
+    background-color: #2563eb;
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+    color: #ffffff !important;
+    font-weight: 500;
+}
+
+
+.navbar-custom .nav-link:hover {
+    color: #dbeafe !important;
+}
