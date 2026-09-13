@@ -181,6 +181,16 @@ Repository ini berisi seluruh tugas yang saya kerjakan selama mengikuti **Bootca
 - Membuat function untuk memvalidasi input perubahan data dan menyimpannya ke database
 - Membuat fitur hapus data berdasarkan `id`
 
+### 📌 Tugas Sesi 23 - Dashboard Dinamis dari Database
+
+- Menambahkan kolom `klik` pada tabel `products` menggunakan migrasi
+- Membuat `DashboardController`
+- Mengedit `DashboardController` agar dapat menampilkan data dari database, seperti:
+  - Jumlah Produk
+  - Jumlah Klik Produk
+  - Jumlah Kategori
+- Mengedit tampilan (front-end) halaman dashboard untuk menampilkan data dari controller
+
 ---
 
 ## 🛠️ Teknologi yang Digunakan
